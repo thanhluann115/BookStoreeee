@@ -91,26 +91,11 @@ namespace WebApplication1.Controllers
         }
 
         // GET: AspNetRoles/Delete/5
-        public ActionResult Delete(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            AspNetRole aspNetRole = db.AspNetRoles.Find(id);
-            if (aspNetRole == null)
-            {
-                return HttpNotFound();
-            }
-            return View(aspNetRole);
-        }
+ 
 
-        // POST: AspNetRoles/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult Delete(string delete)
         {
-            AspNetRole aspNetRole = db.AspNetRoles.Find(id);
+            AspNetRole aspNetRole = db.AspNetRoles.Find(delete);
             db.AspNetRoles.Remove(aspNetRole);
             db.SaveChanges();
             return RedirectToAction("Index");
