@@ -17,7 +17,7 @@ namespace WebApplication1.Models
         public int MaHD { get; set; }
         public Nullable<int> MaSP { get; set; }
         public Nullable<int> SoLuongSP { get; set; }
-        public byte[] NgayTao { get; set; }
+        public int id_CTHD { get; set; }
     
         public virtual HOADON HOADON { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }

@@ -18,7 +18,6 @@ namespace WebApplication1.Models
         public KHACHHANG()
         {
             this.DONHANGs = new HashSet<DONHANG>();
-            this.HOADONs = new HashSet<HOADON>();
         }
     
         public string MAKH { get; set; }
@@ -32,7 +31,5 @@ namespace WebApplication1.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DONHANG> DONHANGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

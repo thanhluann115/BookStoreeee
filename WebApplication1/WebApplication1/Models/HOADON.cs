@@ -14,13 +14,20 @@ namespace WebApplication1.Models
     
     public partial class HOADON
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HOADON()
+        {
+            this.CHITIETHOADONs = new HashSet<CHITIETHOADON>();
+        }
+    
         public int MaHD { get; set; }
-        public string MaKH { get; set; }
         public string TenKH { get; set; }
         public string TongTien { get; set; }
         public Nullable<System.DateTime> NgayLapHD { get; set; }
+        public Nullable<int> SDT { get; set; }
+        public string DiaChi { get; set; }
     
-        public virtual KHACHHANG KHACHHANG { get; set; }
-        public virtual CHITIETHOADON CHITIETHOADON { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHITIETHOADON> CHITIETHOADONs { get; set; }
     }
 }
