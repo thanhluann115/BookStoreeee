@@ -1,0 +1,69 @@
+﻿@model WebApplication1.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="single-product">
+
+    <h1> <b>THÔNG TIN SẢN PHẨM </b>   </h1>
+
+    <div class="col-sm-6">
+        <div class="product-inner">
+            <div><b> TÊN SẢN PHẨM</b> </div>
+            <h2 class="product-name">@Model.TenSP</h2>
+            <div class="product-inner-price">
+                <div>GIÁ TIỀN </div>
+                @Model.Gia
+            </div>
+
+            <div class="cart">
+                <form action="@Url.Action("Create","ShoppingCart")" method="post">
+                    <input type="hidden" name="MaSP" value="@Model.MaSP" />
+                    <div class="quantity">
+                        <div> SỐ LƯỢNG </div>
+                        <input type="number" size="4" class="input-text qty text" title="text" value="1" name="SoLuong" min="1" max="10">
+                    </div>
+
+                    <input class="btn-3" type="submit" value="add to cart" />
+
+                </form>
+            </div>
+
+
+            <div class="product-inner-category">
+                <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
+            </div>
+
+            <div role="tabpanel">
+                <ul class="product-tab" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+                  
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                        <h2>Mô Tả</h2>
+                        <span>
+                            @MvcHtmlString.Create(Model.Noidung)
+                        </span>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="product-images">
+                            <div class="product-main-img">
+                                <b>HÌNH ẢNH </b>
+                                <img src="@Url.Action("Picture", new {Model.MaSP} )" alt="Ảnh Sản Phẩm">
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="profile">
+                        <h2>Reviews</h2>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
