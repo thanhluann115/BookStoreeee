@@ -31,6 +31,7 @@ namespace WebApplication1.Models
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<CHITIETGIOHANG> CHITIETGIOHANGs { get; set; }
+        public virtual DbSet<CHITIETHOADON> CHITIETHOADONs { get; set; }
         public virtual DbSet<DONHANG> DONHANGs { get; set; }
         public virtual DbSet<GIOHANG> GIOHANGs { get; set; }
         public virtual DbSet<HOADON> HOADONs { get; set; }
@@ -38,7 +39,6 @@ namespace WebApplication1.Models
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THONGTINCANHAN> THONGTINCANHANs { get; set; }
-        public virtual DbSet<CHITIETHOADON> CHITIETHOADONs { get; set; }
         public virtual DbSet<DANHMUCSANPHAM> DANHMUCSANPHAMs { get; set; }
     }
 }
