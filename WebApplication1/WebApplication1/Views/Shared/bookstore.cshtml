@@ -52,6 +52,7 @@
                     </div>
                 </div>
 
+
                 <div class="col-md-4">
                     <div class="header-right">
                         <ul class="list-unstyled list-inline">
@@ -75,30 +76,45 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="shopping-item">
-                <a href="@Url.Action("Index", "ShoppingCart")>">
-                    Giỏ Hàng <i class="fa fa-shopping-cart"> </i>
-                    @((Session["ShoppingCart"] as List<CHITIETGIOHANG>)?.Count)
-                </a>
 
-            </div>
-            .
-        </div>
-    </div> <!-- End header area -->
 
-    <div class="single-sidebar">
-        <form action="@Url.Action("Search","SANPHAMs")" method="get">
-            <input type="search" name="Keyword" placeholder="Your search here" value="@ViewBag.Keyword">
-            <button><i class="fa fa-search" aria-hidden="true"></i></button>
-        </form>
+                <div style="margin-left:900px" class="single-sidebar">
+                    <form action="@Url.Action("Search","SANPHAMs")" method="get">
+                        <input type="search" name="Keyword" placeholder="Your search here" value="@ViewBag.Keyword">
+                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+                <div class="aa-logo">
+                    <!-- Text based logo -->
+                    <a href="@Url.Action("Index2","SANPHAMs")">
+                        <h2 style="margin-left: 20px ">
+                            BOOK<strong> STORE</strong> </h2style="margin-left:>
+                            <br> <span style="margin-left: 20px ">Thư viện của bạn </span> </br>
+                    </a>
+                    <!-- img based  logo -->
+                    <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
+                </div>
 
-    </div>
+                <div style="margin-left:500px" class="col-sm-6">
+                    <div class="shopping-item">
+                        <a href="@Url.Action("Index", "ShoppingCart")>">
+                            Giỏ Hàng <i class="fa fa-shopping-cart"> </i>
+                            @((Session["ShoppingCart"] as List<CHITIETGIOHANG>)?.Count)
+                        </a>
+
+                    </div>
+                    .
+                </div>
+
+            </div> <!-- End header area -->
+
+        
+
     <main>
         @RenderBody()
+        
     </main>
+
     <div class="footer-top-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
